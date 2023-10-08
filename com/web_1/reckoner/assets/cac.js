@@ -18,9 +18,40 @@ function addNum() {
         processLabel.innerText = `${oldVal} + ${val} = `
         resultLabel.innerText = currentValue;
     }
-  
+}
 
-}   
+function subNum(){
+    const val = document.getElementById("input-num").value;
+    if(val){
+        const oldVal = currentValue;
+        const inputVal = parseInt(val);
+        currentValue -= inputVal;
+        processLabel.innerText = `${oldVal} - ${val} = `
+        resultLabel.innerText = currentValue;
+    }
+}
+
+function mlyNum(){
+    const val = document.getElementById("input-num").value;
+    if(val){
+        const oldVal = currentValue;
+        const inputVal = parseInt(val);
+        currentValue *= inputVal;
+        processLabel.innerText = `${oldVal} * ${val} = `
+        resultLabel.innerText = currentValue;
+    }
+}
+
+function dvdNum(){
+    const val = document.getElementById("input-num").value;
+    if(val){
+        const oldVal = currentValue;
+        const inputVal = parseInt(val);
+        currentValue /= inputVal;
+        processLabel.innerText = `${oldVal} / ${val} = `
+        resultLabel.innerText = currentValue;
+    }
+}
 
 function clearInfo() {
     document.getElementById("cac-process").innerText = "";
@@ -34,6 +65,6 @@ function getValue() {
 
 
 addBtn.addEventListener('click', addNum);
-subBtn.addEventListener('click', clearInfo);
-mlyBtn.addEventListener('click', getValue);
-dvdBtn.addEventListener('click', showMessage);
+subBtn.addEventListener('click', subNum);
+mlyBtn.addEventListener('click', mlyNum);
+dvdBtn.addEventListener('click', dvdNum);
